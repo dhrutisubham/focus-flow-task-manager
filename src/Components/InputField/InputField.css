@@ -1,0 +1,13 @@
+.inputField{
+    @apply p-4 w-full rounded-lg drop-shadow font-light outline-none focus:drop-shadow-md hover:drop-shadow-md focus:font-normal focus:placeholder:invisible transition-all ease-in;
+}
+
+.inputForm{
+    @apply flex gap-4 max-h-[56px] w-full ;
+}
+
+.submitIcon{
+    height: 100%;
+    aspect-ratio: 1;
+    background: url(/public/assets/icons/button_add.svg) no-repeat;
+}
