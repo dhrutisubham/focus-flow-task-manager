@@ -19,7 +19,7 @@ const InputField = ({todo, setTodo, handleAdd}:Props) => {
             }
             className='inputField'></input>
             <button type='submit'
-            className='dark_btn '
+            className='dark_btn'
             >
                 {/* <span className='submitIcon'></span> */}
                 Add

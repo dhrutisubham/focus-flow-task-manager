@@ -19,7 +19,7 @@ const App:React.FC=()=> {
     }
   };
 
-  console.log(todo)
+  console.log(todo);
 
   return (
     <div className="App">

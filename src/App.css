@@ -1,5 +1,7 @@
 .App {
-  @apply flex flex-col justify-start items-stretch p-4 gap-2;
+  @apply flex flex-col justify-start items-stretch p-10 gap-2 mx-auto;
+
+  max-width: max(800px, 60%);
 }
 
 .App-logo {
