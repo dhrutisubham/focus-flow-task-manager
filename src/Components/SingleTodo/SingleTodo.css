@@ -1,0 +1,11 @@
+.icon{
+    @apply p-2 hover:bg-slate-300 rounded-full transition-all ease-linear hover:scale-[1.1] active:scale-[0.98];
+}
+
+.single__todo_text{
+    /* @apply transition-all ease-in; */
+    transition: text-decoration 0.3s ease;
+}
+.single__todo_text.done{
+    text-decoration: line-through;
+}
