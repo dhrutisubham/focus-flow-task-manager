@@ -69,11 +69,13 @@ const SingleTodo = ({todo, todoList, setTodoList}: Props) => {
     <form action="" onSubmit={(e)=>handleEdit(e, todo.id)} className={`w-full transition-all ease-in flex items-center justify-between  gap-4 p-4 px-6 ${edit?"bg-slate-100 scale-x-[1.015]":"bg-white"} drop-shadow rounded-md `}>
       <input type='text' readOnly={todo.isDone || (!edit)} value={edit ? editTodo : todo.todo} onChange={(e) => setEditTodo(e.target.value)} className={`single__todo_text ${todo.isDone ? 'done' : ''}${edit ? 'focus:border-b-2' : ''}`} ref={inputRef} spellCheck={false}></input>
 
-      <section className='flex gap-2'>
+      <section className='flex gap-1'>
         <IconContext.Provider value={{ color: '#2B3752', size: '1.5em', className: 'react-icons' }}>
           <span className='icon' title="Delete Task" onClick={()=>handleDelete(todo.id)}><MdOutlineDelete /></span>
         </IconContext.Provider>
 
+      
+      {!todo.isDone?(
         <IconContext.Provider value={{ color: '#2B3752', size: '1.5em', className: 'react-icons' }}>
           <span className='icon' title="Edit Task" onClick={()=>{
             if(!todo.isDone){
@@ -81,7 +83,8 @@ const SingleTodo = ({todo, todoList, setTodoList}: Props) => {
             }
             }
           }><MdOutlineModeEdit /></span>
-        </IconContext.Provider>
+        </IconContext.Provider>): null}
+        
 
         <IconContext.Provider value={{ color: '#2B3752', size: '1.5em', className: 'react-icons' }}>
           <span className='icon' title="Mark as Done" onClick={() => handleDone(todo.id)}><MdOutlineDownloadDone /></span>

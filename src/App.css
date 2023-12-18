@@ -1,5 +1,5 @@
 .App {
-  @apply flex flex-col justify-start items-stretch p-10 gap-2 mx-auto;
+  @apply flex flex-col justify-start items-stretch p-10 gap-2 mx-auto h-screen overflow-clip;
 
   max-width: max(800px, 60%);
 }
@@ -28,5 +28,24 @@
 
 .dark_btn{
   @apply w-fit flex p-4 px-8 drop-shadow hover:drop-shadow-md hover:scale-[1.048] bg-blue gap-2 hover:bg-green2 text-white1 rounded-lg items-center text-base font-bold transition-all ease-in active:scale-[1];
+}
+
+.task_lists{
+
+  @apply flex flex-col gap-2 bg-slate-300 p-4 rounded-md w-full h-full overflow-y-scroll;
+}
+
+::-webkit-scrollbar{
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #2B3752;
+  border-radius: 4px;
+  padding-inline: 2px;
+}
+
+.tasks_section{
+  @apply h-full flex flex-col justify-center items-start gap-2 text-blue p-1 flex-1 self-stretch min-w-[300px] overflow-hidden rounded-md;
 }
 

@@ -12,7 +12,7 @@ const InputField = ({todo, setTodo, handleAdd}:Props) => {
     <>
         <form className='inputForm' onSubmit={handleAdd}>
             <input type='input' 
-            placeholder='Enter a Task'
+            placeholder="What's on your to-do list?"
             value={todo}
             onChange={
                 (e)=>setTodo(e.target.value)

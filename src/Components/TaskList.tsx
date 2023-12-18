@@ -8,19 +8,39 @@ interface Props{
 }
 
 const TaskList = ({todoList, setTodoList}:Props) => {
+  const completedTodos = todoList.filter((todo) => todo.isDone);
+  const activeTodos = todoList.filter((todo) => !todo.isDone);
   return (
-    <section className='mt-10 flex flex-col gap-4'>
-      <section className="flex justify-between items-center  text-blue font-bold p-1 text-lg">
-        <h2 className='flex items-end gap-2' >Tasks   <span className="p-1 px-2 bg-slate-300 rounded-lg text-base">{todoList.length}</span></h2>
-        <h2 className=' flex items-end gap-2' >Completed  <span className="p-1 px-2 bg-green2 text-white rounded-lg text-base">{todoList.length}</span></h2>
-      </section>
-    <ul className='flex flex-col gap-2'>
+    
+    // Active Tasks 
+    <section className='mt-10 flex items-stretch justify-center gap-4 h-fit flex-wrap w-full grow overflow-clip'>
+      <section className="tasks_section">
+        <h2 className='flex items-end gap-2 font-bold text-lg w-full sticky' >Tasks   <span className="p-1 px-2 bg-slate-300 rounded-lg text-base">{activeTodos.length}</span></h2>
+        <ul className='task_lists'>
         {
-            todoList.map(todo=>(
+            activeTodos.map(todo=>(
                 <SingleTodo todo={todo} key={todo.id} todoList={todoList} setTodoList={setTodoList}/>
             ))
         }
-    </ul>
+        </ul>
+        
+      </section>
+
+
+    {/* Completed Tasks  */}
+    
+      
+        <section className="tasks_section">
+          <h2 className=' flex items-end gap-2 font-bold text-lg w-full sticky' >Completed  <span className="p-1 px-2 bg-green2 text-white rounded-lg text-base">{completedTodos.length}</span></h2>
+          <ul className='task_lists'>
+          {
+              completedTodos.map(todo=>(
+                  <SingleTodo todo={todo} key={todo.id} todoList={todoList} setTodoList={setTodoList}/>
+              ))
+          }
+      </ul>
+        </section>
+    
     </section>
   )
 }
